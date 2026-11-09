@@ -1,0 +1,28 @@
+GERADOR DE DOCUMENTOS (CASSOL): TERMO DE COMODATO E BOAS-VINDAS
+
+COMO USAR
+1. Dê dois cliques em "Abrir_Gerador.bat" (ou rode: python gerar_termo.py).
+2. Escolha a aba:
+   - Termo de Comodato: data, nome, matrícula/CPF, modelo, série e patrimônio.
+   - Boas-Vindas: nome (só o primeiro nome sai no PDF) e usuário. O e-mail vira usuario@cassol.ind.br
+     e a senha é a do modelo.
+3. Clique em "Gerar PDF". O arquivo vai para a pasta "PDFs gerados".
+
+O nome do colaborador é digitado uma vez e sai no texto e abaixo da assinatura.
+A data já vem com o dia de hoje.
+
+REQUISITOS (uma vez só)
+- Python 3.9+ (python.org) - marque "Add Python to PATH" ao instalar.
+- Microsoft Word (termo) e PowerPoint (boas-vindas) instalados no computador (não precisa instalar mais nada, o programa usa o PowerShell do Windows)
+  OU LibreOffice (gratuito), se o computador não tiver o Word.
+
+ALTERAR O TEXTO DO TERMO
+Termo: edite "modelo_termo.docx" no Word normalmente (não mexa nos campos cinzas nem
+adicione/remova campos).
+Boas-Vindas: edite "modelo_boas_vindas.pptx" no PowerPoint, sem alterar o nome do exemplo
+(Vitor / vpqueiroz), que é o que o programa troca.
+
+GERAR UM .EXE (opcional, para usar sem Python)
+  pip install pyinstaller pywin32
+  pyinstaller --onefile --noconsole --icon icone.ico gerar_termo.py
+Copie o .exe de "dist" para a mesma pasta dos modelos (.docx e .pptx) e do icone.ico.
